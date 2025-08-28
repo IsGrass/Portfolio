@@ -9,7 +9,9 @@ body{
     height: 100%;
     width: 100px;
     margin-left: -10px;
-        border-right: 3px solid maroon;
+}
+.sidebar :hover{
+    text-decoration: underline;
 }
 .side a{
     text-decoration: none;
@@ -54,6 +56,7 @@ body{
     margin-top: 10px;
     border-radius: 50%;
     font-size: xxx-large;
+    text-decoration: none;
 }
 .header{
     width: 100%;
@@ -62,7 +65,7 @@ body{
 .namebox{
     text-align: center;
     position: absolute;
-    top: 287px;
+    top: 271px;
     left: 45%;
 }
 /*projects*/
@@ -89,6 +92,7 @@ body{
     border-radius: 3%;
     margin-top: 39px;
     padding-top: 20px;
+    border: 2px maroon dashed;
 }
 
 .projecth{
@@ -116,15 +120,16 @@ color: white;
     border-radius: 3%;
     display: grid;
     background-color: blanchedalmond;
+    margin-left: 10px;
 }
 
 .fn, .ln{
     width: 42%;
-    margin-left: 37px;
+    
 }
 .ea, .sj{
     width: 90%;
-    margin-left: 35px;    
+       
 }
 .me{
     width: 90%;
@@ -133,14 +138,22 @@ color: white;
 }
 .fn, .ln, .ea, .sj, .me{
     margin-bottom: 10px;
+    margin-left: 37px;
 }
 .sub{
     margin-left: 35px;
 }
 /*About Page*/
+.abt{
+    margin-left: 100px;
+}
 .abt h1{
     font-size: 50px;
     text-align: center;
+}
+.a{
+    margin-top: -39px;
+
 }
 .abt p{
     font-size: 40px;
@@ -149,6 +162,13 @@ color: white;
 .code h1{
     font-size: 50px;
     text-align: center; 
+}
+.code{
+    margin-left: 100px;
+}
+/*SCS*/
+.SCS{
+    margin-left: 100px;
 }
 /*media queries*/
 @media (min-width: 1440px){
@@ -167,7 +187,8 @@ color: white;
         margin-left: 8.5%;
     }
     .namebox{
-        left: 42%;
+        left: 44%;
+        top: 428px;
     }
 }
 
@@ -175,15 +196,24 @@ color: white;
     .namebox{
         left: 41%;
     }
+    
 }
 @media(max-width:1025px){
     .namebox{
-        left: 44%;
+        left: 42%;
     }
     .projects{
         margin-left: 15.5%;
     }
     .git{
         margin-left: 15.5%;
+    }
+}
+@media(min-width:1025px){
+    .flex{
+        display: flex;
+    }
+    #box{
+        display: block;
     }
 }
