@@ -216,7 +216,7 @@ body {
   }
   .namebox {
     left: 44%;
-    top: 428px;
+    top: 278px;
   }
 }
 @media (min-width: 1440px) {
@@ -241,6 +241,9 @@ body {
   }
   #box {
     display: block;
+  }
+  .project {
+    width: 47%;
   }
 }
 
