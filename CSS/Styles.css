@@ -220,7 +220,8 @@ body {
 }
 @media (min-width: 1440px) {
   .namebox {
-    left: 41%;
+    left: 45%;
+    top: 54%;
   }
 }
 @media (max-width: 1025px) {
