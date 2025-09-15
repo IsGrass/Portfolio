@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <link rel="stylesheet" href="CSS/Styles.css">    
+    <link rel="stylesheet" href="CSS/Styles.css">   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"> 
     </head>
     <body> 
+        <div class="menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <div class="sidebar a">
             <a href ="index.html"><button class="icon" >DB</button></a>
             <div class="side side1"><a href="About.html">About <br> Me</a></div>
@@ -15,5 +22,28 @@
         <div class="project code">
             <h1>Coming soon</h1>
         </div>
+         <script>
+            const menu = document.querySelector('.menu');
+            const sidebar = document.querySelector('.sidebar');  
+            menu.addEventListener('click', function() {
+                if (sidebar.style.display === 'block'){
+                sidebar.style.display = 'none';
+                menu.classList.remove("menu2");
+                } else {
+                sidebar.style.display = 'block';
+                menu.classList.add("menu2");
+                }
+            });
+        
+            function handleResize() {
+            if (window.innerWidth > 430) {
+                sidebar.style.display = ''; 
+            } else {
+                sidebar.style.display = 'none';
+            }
+            }
+            window.addEventListener('resize', handleResize);
+            handleResize();
+        </script>
     </body>
 </html>

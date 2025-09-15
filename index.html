@@ -2,28 +2,39 @@
 <html lang="en">    
 <Head>
 <link rel="stylesheet" href="CSS/Styles.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
 </Head>
-<body>
+<body onload="myFunction()">
+    
 <!--sidebar-->
-    <div class="sidebar">
-       <a href ="index.html"><button class="icon" >DB</button></a>
-        <div class="side side1"><a href="About.html">About <br> Me</a></div>
-        <div class="side side2"><a href="#projects">My <br> Portfolio</a></div>
-        <div class="side side3"><a href="codingex.html">Coding <br> Examples</a></div>
-        <div class="side side4"><a href="SCS.html">SCS Scheme</a></div>
-        <div class="side side5"><a href="#git">Contact me</a></div>
+    <div class="menu">
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
+    <div class="sidebar" id="sidebar">
+        <a href ="index.html"><button class="icon" >DB</button></a>
+            <div class="side side1"><a href="About.html">About <br> Me</a></div>
+            <div class="side side2"><a href="#projects">My <br> Portfolio</a></div>
+            <div class="side side3"><a href="codingex.html">Coding <br> Examples</a></div>
+            <div class="side side4"><a href="SCS.html">SCS Scheme</a></div>
+            <div class="side side5"><a href="#git">Contact me</a></div>
+    </div>
+    
 <!--header-->
-    <header style="margin-top: -10px; margin-left: 90px;">
+    <header>
         <div class="header">
-            <img src="img/horizon.png" alt="horizon" style="width: 100vw;">
+            
+            <img src="img/horizon.png" alt="horizon" class="horizon">
             <div class="namebox">
             <h1 class="Name">My Name Is Dennis Boldy</h1>
-            <h2>I am a web developer</h2>
+            <h2 class="Name">I am a web developer</h2>
             </div>
             
         </div>    
     </header>
+   
 <!--projects-->
     <div class="projects" id="projects">
         <div class="flex">
@@ -102,5 +113,75 @@
         </form>
     </div>
 </div>
+<script>
+    function myFunction() {
+        const nameElements = document.querySelectorAll('.Name'); 
+        if (nameElements.length > 0) {
+            nameElements[0].classList.add('animate'); 
+        }
+        if (nameElements.length > 1) {
+            setTimeout(() => {
+                nameElements[1].classList.add('animate'); 
+            }, 400); 
+        }
+    }
+</script>
+<script>
+  const menu = document.querySelector('.menu');
+  const sidebar = document.querySelector('.sidebar');   
+
+  menu.addEventListener('click', function() {
+     if (sidebar.style.display === 'block'){
+        sidebar.style.display = 'none';
+        menu.classList.remove("menu2");
+     } else {
+        sidebar.style.display = 'block';
+        menu.classList.add("menu2");
+     }
+  });
+
+  function handleResize() {
+    if (window.innerWidth > 430) {
+      sidebar.style.display = ''; 
+    } else {
+      sidebar.style.display = 'none';
+    }
+  }
+  window.addEventListener('resize', handleResize);
+  handleResize();
+</script>
+<script>
+document.querySelector('.fbox').addEventListener('submit', function(e) {
+  const firstName = document.querySelector('.fn').value.trim();
+  const lastName = document.querySelector('.ln').value.trim();
+  const email = document.querySelector('.ea').value.trim();
+
+  // Name: only letters, at least 2 characters
+  const nameRegex = /^[A-Za-z]{2,}$/;
+  // Simple email regex
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  let valid = true;
+  let message = '';
+
+  if (!nameRegex.test(firstName)) {
+    valid = false;
+    message += 'Please enter a valid first name.\n';
+  }
+  if (!nameRegex.test(lastName)) {
+    valid = false;
+    message += 'Please enter a valid last name.\n';
+  }
+  if (!emailRegex.test(email)) {
+    valid = false;
+    message += 'Please enter a valid email address.\n';
+  }
+
+  if (!valid) {
+    alert(message);
+    e.preventDefault();
+  }
+});
+</script>
 </body>
 </html>

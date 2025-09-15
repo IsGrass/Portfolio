@@ -2,8 +2,16 @@
 <html>
     <head>
     <link rel="stylesheet" href="CSS/Styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
     </head>
     <body>
+        <div class="menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    <!--sidebar-->
         <div class="sidebar a">
         <a href ="index.html"><button class="icon" >DB</button></a>
         <div class="side side1"><a href="About.html">About <br> Me</a></div>
@@ -17,7 +25,31 @@
         </div>    
         <div class="project abt">
             <img src="" alt="">
-            <p>I am a 20 year old beguinner web developer, I enjoy games such as path of exile, overwatch 2 and minecraft along with anime and warhammer 40k. I studied Computer science up to gcse and IT as one of my A levels.</p>
+            <p>I am a 20 year old beginner web developer, I enjoy games such as path of exile, overwatch 2 and minecraft along with anime and warhammer 40k. I studied Computer science up to gcse and IT as one of my A levels.</p>
         </div>
+        <script>
+            const menu = document.querySelector('.menu');
+            const sidebar = document.querySelector('.sidebar');   
+
+            menu.addEventListener('click', function() {
+               if (sidebar.style.display === 'block'){
+                  sidebar.style.display = 'none';
+                  menu.classList.remove("menu2");
+               } else {
+                  sidebar.style.display = 'block';
+                  menu.classList.add("menu2");
+               }
+            });
+        
+            function handleResize() {
+              if (window.innerWidth > 430) {
+                sidebar.style.display = ''; 
+              } else {
+                sidebar.style.display = 'none';
+              }
+            }
+            window.addEventListener('resize', handleResize);
+            handleResize();
+        </script>
     </body>
 </html>
