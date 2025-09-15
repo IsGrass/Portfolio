@@ -163,6 +163,7 @@ document.querySelector('.fbox').addEventListener('submit', function(e) {
 
   let valid = true;
   let message = '';
+  let message2 = 'Thank you for getting in touch, I will respond as soon as possible.';
 
   if (!nameRegex.test(firstName)) {
     valid = false;
@@ -180,6 +181,8 @@ document.querySelector('.fbox').addEventListener('submit', function(e) {
   if (!valid) {
     alert(message);
     e.preventDefault();
+  } else {
+    alert(message2);
   }
 });
 </script>
