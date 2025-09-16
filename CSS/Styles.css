@@ -226,7 +226,7 @@ body {
 
 /*SCS*/
 .SCS {
-  margin-left: 100px;
+  margin-left: 10%;
 }
 
 /*media queries*/
@@ -237,6 +237,9 @@ body {
   .namebox {
     left: 45%;
     top: 20%;
+  }
+  .SCS {
+    margin-left: 10%;
   }
 }
 @media (max-width: 1439px) {
@@ -299,6 +302,9 @@ body {
   .projects, .git {
     margin-right: -3%;
     margin-left: 14%;
+  }
+  .SCS {
+    margin-left: 13%;
   }
 }
 @media (max-width: 430px) {
