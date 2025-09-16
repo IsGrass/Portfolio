@@ -194,6 +194,9 @@ color: white;
     margin-left: 100px;
 }
 /*SCS*/
+.SCS{
+    margin-left: 100px;
+}
 /*media queries*/
 @media (min-width: 1440px){
 .projects, .git{
@@ -262,13 +265,13 @@ color: white;
         margin-left: 1.5%;
         margin-right: 9%;
     }
-    .abt{
+    .abt, .SCS, .code{
         margin-left: 0px;
     }
 }
 @media (max-width: 769px){
         .projects, .git {
-        margin-right: -12%;
+        margin-right: -3%;
         margin-left: 14%;
     }
 }
@@ -281,13 +284,14 @@ color: white;
         width: 110vw;
     }
     .projects, .git{
-        margin-right: 1.5%;
+        margin-right: 2.5%;
+        margin-left: 2%;
     }
 }
 @media (max-width: 321px){
     .projects, .git{
-        margin-left: 7.5%;
-        margin-right: -14%;
+        margin-left: 1.5%;
+        margin-right: -8%;
     }
     .horizon{
         width: 120vw;
